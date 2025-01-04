@@ -3,7 +3,7 @@ import streamlit as st
 from PIL import Image
 
 # Chemin du dossier principal contenant tous les sous-dossiers
-dossier_principal = "C:/Users/HP/Desktop/ARMOIRE"
+dossier_principal = "C:/Users/HP/Desktop/projet final/ARMOIRE"
 
 # Vérification si le dossier principal existe
 if not os.path.exists(dossier_principal):
