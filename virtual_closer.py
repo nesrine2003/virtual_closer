@@ -3,7 +3,12 @@ import streamlit as st
 from PIL import Image
 
 # Chemin du dossier principal contenant tous les sous-dossiers
-dossier_principal = "C:/Users/HP/Desktop/projet final/ARMOIRE"
+# Chemin relatif vers le dossier "armoire"
+dossier_principal = os.path.join(os.path.dirname(__file__), "ARMOIRE")
+
+# Vérification si le dossier principal existe
+if not os.path.exists(dossier_principal):
+    raise FileNotFoundError(f"Le dossier principal {dossier_principal} n'existe pas.")
 
 # Vérification si le dossier principal existe
 if not os.path.exists(dossier_principal):
@@ -32,3 +37,4 @@ else:
                 st.image(img, caption=f"{categorie} - {fichier}")
             except Exception as e:
                 st.error(f"Erreur lors du chargement de l'image {chemin_fichier}: {e}")
+
